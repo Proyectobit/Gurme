@@ -1,0 +1,25 @@
+{% extends "base/layout.html" %}
+
+
+{% block contenido %}
+  <div class="chef-list">
+    <h1>NUESTROS CHEFS</h1>
+
+    <div class="chefs">
+      {% for chef in object_list %}
+        <div class="chef-card">
+          <!-- Aca la url de la background Image esta hardcodeada (MALO) hecho para prototipado rapido -->
+          <div class="chef-image" style="background-image: url({{chef.foto_perfil.url}})"></div>
+          <div class="chef-info">
+            <p>{{chef.nombre}} {{chef.apellido}}</p>
+            <button class="btn btn-dark">Ver mas</button>
+          </div>
+        </div>
+      {% endfor %}
+      <div class="chef-fill"></div>
+      <div class="chef-fill"></div>
+      <div class="chef-fill"></div>
+    </div>
+
+  </div>
+{% endblock contenido %}
